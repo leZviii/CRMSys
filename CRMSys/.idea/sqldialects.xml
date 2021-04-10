@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/settings/dao/DicTypeDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/settings/dao/DicValueDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/settings/dao/UserDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ActivityDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ActivityRemarkDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ClueActivityRelationDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ClueDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ClueRemarkDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ContactsActivityRelationDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ContactsDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ContactsRemarkDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/CustomerDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/CustomerRemarkDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/TranDao.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/TranHistoryDao.xml" dialect="MySQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/leviii/crm/workbench/dao/ActivityDao.xml" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+  </component>
+</project>

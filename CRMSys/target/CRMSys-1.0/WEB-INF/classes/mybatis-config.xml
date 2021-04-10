@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="db.properties"/>
+
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.leviii.crm.settings.domain"/>
+        <package name="com.leviii.crm.workbench.domain"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${mysql_jdbc_driver}"/>
+                <property name="url" value="${mysql_jdbc_url}"/>
+                <property name="username" value="${mysql_jdbc_user}"/>
+                <property name="password" value="${mysql_jdbc_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--
+            使用package的要求：
+                1、mapper文件名称和dao接口名必须一致
+                2、mapper文件和dao接口必须在同一目录
+        -->
+        <package name="com.leviii.crm.settings.dao"/>
+        <package name="com.leviii.crm.workbench.dao"/>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.leviii.crm.workbench.dao.ClueDao">
+
+    <delete id="delete">
+        delete from tbl_clue where id=#{clueId}
+    </delete>
+
+    <select id="getClueById" resultType="Clue">
+        select
+            a.id,
+            a.fullname,
+            a.appellation,
+            b.name as owner,
+            a.company,
+            a.job,
+            a.email,
+            a.phone,
+            a.website,
+            a.mphone,
+            a.state,
+            a.source,
+            a.createBy,
+            a.createTime,
+            a.editBy,
+            a.editTime,
+            a.description,
+            a.contactSummary,
+            a.nextContactTime,
+            a.address
+            from tbl_clue a
+            join tbl_user b on a.owner = b.id
+            where a.id = #{id}
+    </select>
+
+    <insert id="save">
+        insert into tbl_clue(
+            id,
+            fullname,
+            appellation,
+            owner,
+            company,
+            job,
+            email,
+            phone,
+            website,
+            mphone,
+            state,
+            source,
+            createBy,
+            createTime,
+            description,
+            contactSummary,
+            nextContactTime,
+            address
+        )
+        values (
+                #{id},
+                #{fullname},
+                #{appellation},
+                #{owner},
+                #{company},
+                #{job},
+                #{email},
+                #{phone},
+                #{website},
+                #{mphone},
+                #{state},
+                #{source},
+                #{createBy},
+                #{createTime},
+                #{description},
+                #{contactSummary},
+                #{nextContactTime},
+                #{address}
+               )
+    </insert>
+	
+	<select id="getClueList" resultType="Clue">
+        select * from tbl_clue
+    </select>
+
+    <select id="getClueListByCondition" resultType="Clue">
+        select a.id,a.fullname,a.company,b.name as owner,a.phone,a.mphone,a.source,a.state from tbl_clue a
+            join tbl_user b on a.owner = b.id
+            <where>
+                <if test="fullname != null and fullname != ''">
+                    fullname like '%' #{fullname} '%'
+                </if>
+                <if test="company != null and company != ''">
+                    company like '%' #{company} '%'
+                </if>
+                <if test="owner != null and owner != ''">
+                    owner like '%' #{owner} '%'
+                </if>
+                <if test="phone != null and phone != ''">
+                    phone like '%' #{phone} '%'
+                </if>
+                <if test="mphone != null and mphone != ''">
+                    mphone like '%' #{mphone} '%'
+                </if>
+                <if test="source != null and source != ''">
+                    source like '%' #{source} '%'
+                </if>
+                <if test="state != null and state != ''">
+                    state like '%' #{state} '%'
+                </if>
+            </where>
+            order by a.createTime desc
+            limit #{skipCount},#{pageSize}
+    </select>
+
+    <select id="getTotalByCondition" resultType="int">
+        select count(*) from tbl_clue
+        <where>
+            <if test="fullname != null and fullname != ''">
+                fullname like '%' #{fullname} '%'
+            </if>
+            <if test="company != null and company != ''">
+                company like '%' #{company} '%'
+            </if>
+            <if test="owner != null and owner != ''">
+                owner like '%' #{owner} '%'
+            </if>
+            <if test="phone != null and phone != ''">
+                phone like '%' #{phone} '%'
+            </if>
+            <if test="mphone != null and mphone != ''">
+                mphone like '%' #{mphone} '%'
+            </if>
+            <if test="source != null and source != ''">
+                source like '%' #{source} '%'
+            </if>
+            <if test="state != null and state != ''">
+                state like '%' #{state} '%'
+            </if>
+        </where>
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
